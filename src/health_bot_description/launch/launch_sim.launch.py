@@ -33,7 +33,19 @@ def generate_launch_description():
                                    '-name', 'health_bot',
                                    '-z', '0.1'],
                         output='screen')
+    bridge_params = os.path.join(get_package_share_directory(pkg_name), 'config', 'bridge_params.yaml')
+    start_gazebo_ros_bridge_cm = Node(
+        package="ros_gz_bridge",
+        executable="parameter_bridge",
+        arguments=[
+            '--ros-args', '-p', f'config_file:={bridge_params}'
+        ],
+        output="screen"
+    )
 
+
+
+    
     return LaunchDescription([
         rsp,
         gazebo,
