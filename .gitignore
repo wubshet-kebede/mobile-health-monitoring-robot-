@@ -1,0 +1,13 @@
+# Ignore ROS2 build artifacts
+build/
+install/
+log/
+
+# IDE/editor settings
+.vscode/
+__pycache__/
+*.pyc
+
+# Generated files
+*.pdf
+*.gv
