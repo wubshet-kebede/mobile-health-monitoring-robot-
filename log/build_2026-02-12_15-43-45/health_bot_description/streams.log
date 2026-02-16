@@ -1,0 +1,27 @@
+[0.019s] Invoking command in '/home/wube/health_bot_ws/build/health_bot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/wube/health_bot_ws/build/health_bot_description -- -j12 -l12
+[0.097s] Invoked command in '/home/wube/health_bot_ws/build/health_bot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/wube/health_bot_ws/build/health_bot_description -- -j12 -l12
+[0.117s] Invoking command in '/home/wube/health_bot_ws/build/health_bot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/wube/health_bot_ws/build/health_bot_description
+[0.134s] -- Install configuration: ""
+[0.134s] -- Up-to-date: /home/wube/health_bot_ws/install/health_bot_description/share/health_bot_description/launch
+[0.134s] -- Up-to-date: /home/wube/health_bot_ws/install/health_bot_description/share/health_bot_description/launch/launch_sim.launch.py
+[0.134s] -- Up-to-date: /home/wube/health_bot_ws/install/health_bot_description/share/health_bot_description/launch/rsp.launch.py
+[0.134s] -- Up-to-date: /home/wube/health_bot_ws/install/health_bot_description/share/health_bot_description/urdf
+[0.134s] -- Up-to-date: /home/wube/health_bot_ws/install/health_bot_description/share/health_bot_description/urdf/inertials.xacro
+[0.135s] -- Up-to-date: /home/wube/health_bot_ws/install/health_bot_description/share/health_bot_description/urdf/test.urdf
+[0.135s] -- Installing: /home/wube/health_bot_ws/install/health_bot_description/share/health_bot_description/urdf/robot.urdf.xacro
+[0.135s] -- Up-to-date: /home/wube/health_bot_ws/install/health_bot_description/share/ament_index/resource_index/package_run_dependencies/health_bot_description
+[0.135s] -- Up-to-date: /home/wube/health_bot_ws/install/health_bot_description/share/ament_index/resource_index/parent_prefix_path/health_bot_description
+[0.135s] -- Up-to-date: /home/wube/health_bot_ws/install/health_bot_description/share/health_bot_description/environment/ament_prefix_path.sh
+[0.135s] -- Up-to-date: /home/wube/health_bot_ws/install/health_bot_description/share/health_bot_description/environment/ament_prefix_path.dsv
+[0.136s] -- Up-to-date: /home/wube/health_bot_ws/install/health_bot_description/share/health_bot_description/environment/path.sh
+[0.136s] -- Up-to-date: /home/wube/health_bot_ws/install/health_bot_description/share/health_bot_description/environment/path.dsv
+[0.136s] -- Up-to-date: /home/wube/health_bot_ws/install/health_bot_description/share/health_bot_description/local_setup.bash
+[0.136s] -- Up-to-date: /home/wube/health_bot_ws/install/health_bot_description/share/health_bot_description/local_setup.sh
+[0.136s] -- Up-to-date: /home/wube/health_bot_ws/install/health_bot_description/share/health_bot_description/local_setup.zsh
+[0.136s] -- Up-to-date: /home/wube/health_bot_ws/install/health_bot_description/share/health_bot_description/local_setup.dsv
+[0.137s] -- Installing: /home/wube/health_bot_ws/install/health_bot_description/share/health_bot_description/package.dsv
+[0.137s] -- Up-to-date: /home/wube/health_bot_ws/install/health_bot_description/share/ament_index/resource_index/packages/health_bot_description
+[0.137s] -- Up-to-date: /home/wube/health_bot_ws/install/health_bot_description/share/health_bot_description/cmake/health_bot_descriptionConfig.cmake
+[0.137s] -- Up-to-date: /home/wube/health_bot_ws/install/health_bot_description/share/health_bot_description/cmake/health_bot_descriptionConfig-version.cmake
+[0.137s] -- Up-to-date: /home/wube/health_bot_ws/install/health_bot_description/share/health_bot_description/package.xml
+[0.139s] Invoked command in '/home/wube/health_bot_ws/build/health_bot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/wube/health_bot_ws/build/health_bot_description

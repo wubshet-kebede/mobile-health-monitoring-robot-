@@ -1,0 +1,2 @@
+Invoking command in '/home/wube/health_bot_ws/build/health_bot_description': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/wube/health_bot_ws/src/health_bot_description -DCMAKE_INSTALL_PREFIX=/home/wube/health_bot_ws/install/health_bot_description
+Invoked command in '/home/wube/health_bot_ws/build/health_bot_description' returned '1': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/wube/health_bot_ws/src/health_bot_description -DCMAKE_INSTALL_PREFIX=/home/wube/health_bot_ws/install/health_bot_description

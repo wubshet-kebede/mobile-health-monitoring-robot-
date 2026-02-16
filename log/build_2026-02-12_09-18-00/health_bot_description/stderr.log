@@ -1,0 +1,27 @@
+Error parsing '/home/wube/health_bot_ws/src/health_bot_description/package.xml':
+Traceback (most recent call last):
+  File "/opt/ros/jazzy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 150, in <module>
+    main()
+  File "/opt/ros/jazzy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 53, in main
+    raise e
+  File "/opt/ros/jazzy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py", line 49, in main
+    package = parse_package_string(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 788, in parse_package_string
+    pkg.validate(warnings=warnings)
+  File "/usr/lib/python3/dist-packages/catkin_pkg/package.py", line 330, in validate
+    raise InvalidPackage('\n'.join(errors), self.filename)
+catkin_pkg.package.InvalidPackage: Error(s) in package '/home/wube/health_bot_ws/src/health_bot_description/package.xml':
+Invalid email "wubshet2829@gmail.com git config --global user.name Wubshet" for person "wube"
+[31mCMake Error at /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:95 (message):
+  execute_process(/usr/bin/python3
+  /opt/ros/jazzy/share/ament_cmake_core/cmake/core/package_xml_2_cmake.py
+  /home/wube/health_bot_ws/src/health_bot_description/package.xml
+  /home/wube/health_bot_ws/build/health_bot_description/ament_cmake_core/package.cmake)
+  returned error code 1
+Call Stack (most recent call first):
+  /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package_xml.cmake:49 (_ament_package_xml)
+  /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_find_test_dependencies.cmake:31 (ament_package_xml)
+  CMakeLists.txt:23 (ament_lint_auto_find_test_dependencies)
+
+[0m
