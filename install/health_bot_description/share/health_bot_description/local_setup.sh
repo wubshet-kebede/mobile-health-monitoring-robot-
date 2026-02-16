@@ -1,1 +1,0 @@
-/home/wube/health_bot_ws/build/health_bot_description/ament_cmake_environment_hooks/local_setup.sh

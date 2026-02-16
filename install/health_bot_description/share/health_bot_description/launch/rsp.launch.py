@@ -1,1 +1,0 @@
-/home/wube/health_bot_ws/src/health_bot_description/launch/rsp.launch.py
