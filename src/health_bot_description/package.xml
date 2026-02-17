@@ -1,13 +1,14 @@
 <?xml version="1.0"?>
-<?xml-model href="http://download.ros.org" schematypens="http://www.w3.org"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<!-- this file defines the package name version, description , maintainer and the license and also dependencies for what other packages are required to run our package-->
 <package format="3">
-  <name>health_bot_description</name>
+  <name>health_bot_description</name><!--the name of the package-->
   <version>0.0.1</version>
   <description>IoT Enabled Autonomous Mobile Health Robot for Remote Patient Monitoring</description>
   <maintainer email="wubshet2829@gmail.com">wube</maintainer>
   <license>Apache-2.0</license>
 
-  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend><!--the build tool used to build our package-->
 
   <!-- Dependencies needed for the robot to run -->
   <exec_depend>robot_state_publisher</exec_depend>
