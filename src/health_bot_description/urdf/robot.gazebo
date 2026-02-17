@@ -24,6 +24,28 @@
         <mu2>0.0001</mu2>
         <material>Gazebo/Blue</material> 
     </gazebo>   
+       <gazebo reference="laser_frame">
+        <sensor name="laser" type="gpu_lidar">
+            <pose> 0 0 0 0 0 0 </pose>
+            <visualize>true</visualize> <!-- This lets you see the blue rays! -->
+            <update_rate>10</update_rate>
+            <lidar>
+                <scan>
+                    <horizontal>
+                        <samples>360</samples>
+                        <min_angle>-3.14</min_angle>
+                        <max_angle>3.14</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.3</min> <!-- Standard LiDAR min range -->
+                    <max>12.0</max> <!-- Range for indoor hospital use -->
+                </range>
+            </lidar>
+            <topic>scan</topic>
+            <gz_frame_id>laser_frame</gz_frame_id>
+        </sensor>
+    </gazebo>
 
     <gazebo>
         <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">

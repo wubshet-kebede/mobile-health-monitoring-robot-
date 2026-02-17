@@ -23,6 +23,10 @@
 
     <!-- Caster Inertia Moments (Sphere) -->
     <xacro:property name="I_caster" value="${(2.0/5.0) * m3 * cr * cr}" />
+    <!--lidar specification -->
+<xacro:property name="I_lidar_x" value="${(1/12) * laser_m * (3*laser_r*laser_r + laser_l*laser_l)}"/>
+<xacro:property name="I_lidar_y" value="${(1/12) * laser_m * (3*laser_r*laser_r + laser_l*laser_l)}"/>
+<xacro:property name="I_lidar_z" value="${(1/2) * laser_m * (laser_r*laser_r)}"/>
 
     <!-- BODY INERTIA MACRO -->
     <xacro:macro name="inertial_body">
@@ -57,5 +61,20 @@
                      izz="${I_caster}" />
         </inertial>
     </xacro:macro>
+   <!-- LIDAR INERTIA MACRO -->
+    <!-- Macro for LiDAR/Cylinder Inertia -->
+    <!-- LIDAR INERTIA MACRO -->
+<xacro:macro name="inertial_lidar">
+  <inertial>
+    <origin xyz="0 0 ${laser_l/2}" rpy="0 0 0"/>
+    <!-- Mass of the LiDAR sensor -->
+    <mass value="${laser_m}"/>
+    <!-- Approximate inertia values for a small cylindrical sensor -->
+    <inertia ixx="${I_lidar_x}" ixy="0.0" ixz="0.0"
+             iyy="${I_lidar_y}" iyz="0.0"
+             izz="${I_lidar_z}"/>
+  </inertial>
+</xacro:macro>
+
 
 </robot>
