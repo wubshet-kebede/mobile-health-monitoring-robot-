@@ -13,16 +13,16 @@ find_package(ament_cmake REQUIRED)
 # This replaces the AWS Python script
 # It runs your shell script to download all 40+ models automatically
 set(MODEL_LIST
-  XRayMachine IVStand BloodPressureMonitor BPCart BMWCart
-  CGMClassic StorageRack Chair InstrumentCart1 Scrubs
-  PatientWheelChair WhiteChipChair TrolleyBed SurgicalTrolley
-  PotatoChipChair VisitorKidSit FemaleVisitorSit AdjTable
-  MopCart3 MaleVisitorSit Drawer OfficeChairBlack ElderLadyPatient
-  ElderMalePatient InstrumentCart2 MetalCabinet BedTable BedsideTable
-  AnesthesiaMachine TrolleyBedPatient Shower SurgicalTrolleyMed
-  StorageRackCovered KitchenSink Toilet VendingMachine ParkingTrolleyMin
-  PatientFSit MaleVisitorOnPhone FemaleVisitor MalePatientBed
-  StorageRackCoverOpen ParkingTrolleyMax
+  XRayMachine IVStand BloodPressureMonitor BPCart BMWCart 
+  CGMClassic StorageRack Chair InstrumentCart1 Scrubs 
+  PatientWheelChair WhiteChipChair TrolleyBed SurgicalTrolley 
+  PotatoChipChair VisitorKidSit FemaleVisitorSit AdjTable 
+  MopCart3 MaleVisitorSit Drawer OfficeChairBlack ElderLadyPatient 
+  ElderMalePatient InstrumentCart2 MetalCabinet BedTable BedsideTable 
+  AnesthesiaMachine TrolleyBedPatient Shower SurgicalTrolleyMed 
+  StorageRackCovered KitchenSink Toilet VendingMachine ParkingTrolleyMin 
+  PatientFSit MaleVisitorOnPhone FemaleVisitor MalePatientBed 
+  StorageRackCoverOpen ParkingTrolleyMax 
 )
 
 set(MISSING_MODELS FALSE)
