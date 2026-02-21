@@ -89,12 +89,12 @@
     <!-- LiDAR JOINT (Top Front) -->
     <joint name="laser_joint" type="fixed">
         <parent link="body_link" />
-        <child link="laser_frame" />
-        <!-- Moves it to the front (+X) and on top of the chassis (+Z) -->
-         <origin xyz="0.2 0 ${c}" rpy="0 0 0" />
+        <child link="laser_link" />
+        <!--  -->
+         <origin xyz="0.2 0 ${c + laser_l/2}" rpy="0 0 0" />
     </joint>
 
-    <link name="laser_frame">
+    <link name="laser_link">
         <visual>
             <geometry> <cylinder radius="${laser_r}" length="${laser_l}" /> </geometry>
             <material name="black" />
@@ -102,7 +102,7 @@
         <collision>
             <geometry> <cylinder radius="${laser_r}" length="${laser_l}" /> </geometry>
         </collision>
-        <!-- Using the NEW dynamic macro from inertials.xacro -->
+        
         <xacro:inertial_lidar/>
     </link>
 
