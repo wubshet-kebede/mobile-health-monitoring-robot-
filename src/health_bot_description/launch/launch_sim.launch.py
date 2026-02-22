@@ -8,7 +8,7 @@ def generate_launch_description():
     pkg_name = 'health_bot_description'
     
     #  Path Resolution
-    world_path = os.path.join(get_package_share_directory(pkg_name), 'worlds', 'health_hospital.world')
+
     bridge_params = os.path.join(get_package_share_directory(pkg_name), 'config', 'bridge_params.yaml')
     rsp = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
@@ -31,13 +31,7 @@ def generate_launch_description():
     launch_arguments={'use_sim_time': 'true'}.items()
 )
 
-    #  Gazebo Simulation
-    gazebo = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([os.path.join(
-            get_package_share_directory('ros_gz_sim'), 'launch', 'gz_sim.launch.py'
-        )]), launch_arguments={'gz_args': f'-r {world_path}'}.items()
-    )
-
+  
     #  Spawn the Robot 
     spawn_entity = Node(
         package='ros_gz_sim', 
@@ -62,7 +56,6 @@ def generate_launch_description():
     return LaunchDescription([
         hospital_world_launch,
         rsp,
-        gazebo,
         spawn_entity,
         bridge,  
         slam,
