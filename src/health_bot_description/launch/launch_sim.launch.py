@@ -23,9 +23,9 @@ def generate_launch_description():
     hospital_world_launch = IncludeLaunchDescription(
     PythonLaunchDescriptionSource(
         os.path.join(
-            get_package_share_directory('aws_robomaker_hospital_world'),
+            get_package_share_directory('health_hospital_world'),
             'launch',
-            'hospital.launch.py'   # or hospital_world.launch.py depending on repo
+            'view_hospital.launch.py'   
         )
     ),
     launch_arguments={'use_sim_time': 'true'}.items()

@@ -6,13 +6,13 @@
 <description>
 Simulation package for a hospital world, designed to support healthcare robotics applications such as patient monitoring, navigation, and logistics in medical environments.
 </description>
-  <Author email="wubshet2829@gmail.com">Wubshet</Author>
   <maintainer email="wubshet2829@gmail.com">wube</maintainer>
 
   <license>Apache-2.0</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
-  
+   <exec_depend>ros_gz_sim</exec_depend>
+  <exec_depend>ros_gz_bridge</exec_depend>
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
 
