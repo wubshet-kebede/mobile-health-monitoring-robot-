@@ -12,13 +12,23 @@
       <background>0.4 0.4 0.4 1</background>
       <shadows>false</shadows>
     </scene>
-    <include>
-      <uri>model://sun</uri>
-    </include>
-    <include>
+    <light name='sun' type='directional'>
+<cast_shadows>1</cast_shadows>
+<pose frame=''>0 0 10 0 -0 0</pose>
+<diffuse>0.8 0.8 0.8 1</diffuse>
+<specular>0.2 0.2 0.2 1</specular>
+<attenuation>
+<range>1000</range>
+<constant>0.9</constant>
+<linear>0.01</linear>
+<quadratic>0.001</quadratic>
+</attenuation>
+<direction>-0.5 0.1 -0.9</direction>
+</light>
+    <!-- <include>
       <uri>model://ground_plane</uri>
       <pose>0 0 -0.1 0 -0 0</pose>
-    </include>
+    </include> -->
     <model name="aws_robomaker_hospital_floor_01_floor_1">
       <include>
         <uri>model://aws_robomaker_hospital_floor_01_floor</uri>
