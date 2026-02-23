@@ -9,14 +9,14 @@ import xacro
 def generate_launch_description():
     pkg_name = 'health_bot_description'
     
-    # 1. Check for 'use_sim_time' (important for Gazebo)
+    # Check for 'use_sim_time' (important for Gazebo)
     use_sim_time = LaunchConfiguration('use_sim_time')
 
-    # 2. Process the xacro file
+    #  Process the xacro file
     xacro_file = os.path.join(get_package_share_directory(pkg_name), 'urdf', 'robot.urdf.xacro')
     robot_description_raw = xacro.process_file(xacro_file).toxml()
 
-    # 3. Robot State Publisher Node
+    #  Robot State Publisher Node
     node_robot_state_publisher = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',

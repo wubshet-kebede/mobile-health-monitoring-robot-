@@ -25,10 +25,31 @@
 </attenuation>
 <direction>-0.5 0.1 -0.9</direction>
 </light>
-    <!-- <include>
-      <uri>model://ground_plane</uri>
-      <pose>0 0 -0.1 0 -0 0</pose>
-    </include> -->
+<model name="ground_plane">
+<static>true</static>
+<link name="link">
+<collision name="collision">
+<geometry>
+<plane>
+<normal>0 0 1</normal>
+</plane>
+</geometry>
+</collision>
+<visual name="visual">
+<geometry>
+<plane>
+<normal>0 0 1</normal>
+<size>100 100</size>
+</plane>
+</geometry>
+<material>
+<ambient>0.8 0.8 0.8 1</ambient>
+<diffuse>0.8 0.8 0.8 1</diffuse>
+<specular>0.8 0.8 0.8 1</specular>
+</material>
+</visual>
+</link>
+</model>
     <model name="aws_robomaker_hospital_floor_01_floor_1">
       <include>
         <uri>model://aws_robomaker_hospital_floor_01_floor</uri>
