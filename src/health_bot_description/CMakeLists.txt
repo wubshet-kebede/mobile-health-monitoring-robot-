@@ -16,6 +16,10 @@ install(DIRECTORY
   launch
   urdf
   worlds
+  models
+  photos
+  docs
+  meshes
   config  # Added config for your future SLAM/Nav2 parameters
   DESTINATION share/${PROJECT_NAME}
 )
