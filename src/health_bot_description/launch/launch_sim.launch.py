@@ -136,7 +136,8 @@ def generate_launch_description():
             "xacro ",
             LaunchConfiguration("model"),
             " is_ignition:=",
-            is_ignition
+            is_ignition,
+            " is_sim:=true"
         ]),
         value_type=str
     )
@@ -173,7 +174,28 @@ def generate_launch_description():
         }],
         output="screen"
     )
-
+    controller_manager = Node(
+    package="controller_manager",
+    executable="ros2_control_node",
+    parameters=[os.path.join(
+        get_package_share_directory("health_bot_description"),
+        "config",
+        "healthbot_controllers.yaml"
+    )],
+    output="screen"
+)
+    spawner_jsb = Node( 
+        package="controller_manager",
+        executable="spawner",
+        arguments=["joint_state_broadcaster"],
+        output="screen" 
+    )
+    spawner_diff = Node( 
+        package="controller_manager",
+        executable="spawner",
+        arguments=["healthbot_controller"],
+        output="screen"
+    )
     return LaunchDescription([
         model_arg,
         world_name_arg,
@@ -181,5 +203,8 @@ def generate_launch_description():
         robot_state_publisher_node,
         gazebo,
         gz_spawn_entity,
-        gz_ros2_bridge
+        gz_ros2_bridge,
+        controller_manager,
+        spawner_jsb,
+        spawner_diff
     ])
