@@ -130,17 +130,12 @@ def generate_launch_description():
         )
 
     ros_distro = os.environ["ROS_DISTRO"]
-    is_ignition = "True" if ros_distro == "humble" else "False"
+    # is_ignition = "True" if ros_distro == "humble" else "False"
 
-    robot_description = ParameterValue(Command([
-            "xacro ",
-            LaunchConfiguration("model"),
-            " is_ignition:=",
-            is_ignition,
-            " is_sim:=true"
-        ]),
+    robot_description = ParameterValue( 
+        Command([ "xacro ", LaunchConfiguration("model") ]), 
         value_type=str
-    )
+ )
 
     robot_state_publisher_node = Node(
         package="robot_state_publisher",
@@ -162,7 +157,11 @@ def generate_launch_description():
         executable="create",
         output="screen",
         arguments=["-topic", "robot_description",
-                   "-name", "health_bot"],
+                   "-name", "health_bot",
+                    "-world", "hospital_world",
+                    "-x", "3",
+                    "-y", "2",
+                    "-z", "0.05"],
     )
 
     gz_ros2_bridge = Node(
@@ -174,28 +173,28 @@ def generate_launch_description():
         }],
         output="screen"
     )
-    controller_manager = Node(
-    package="controller_manager",
-    executable="ros2_control_node",
-    parameters=[os.path.join(
-        get_package_share_directory("health_bot_description"),
-        "config",
-        "healthbot_controllers.yaml"
-    )],
-    output="screen"
-)
-    spawner_jsb = Node( 
-        package="controller_manager",
-        executable="spawner",
-        arguments=["joint_state_broadcaster"],
-        output="screen" 
-    )
-    spawner_diff = Node( 
-        package="controller_manager",
-        executable="spawner",
-        arguments=["healthbot_controller"],
-        output="screen"
-    )
+#     controller_manager = Node(
+#     package="controller_manager",
+#     executable="ros2_control_node",
+#     parameters=[os.path.join(
+#         get_package_share_directory("health_bot_description"),
+#         "config",
+#         "healthbot_controllers.yaml"
+#     )],
+#     output="screen"
+# )
+#     spawner_jsb = Node( 
+#         package="controller_manager",
+#         executable="spawner",
+#         arguments=["joint_state_broadcaster"],
+#         output="screen" 
+#     )
+#     spawner_diff = Node( 
+#         package="controller_manager",
+#         executable="spawner",
+#         arguments=["healthbot_controller"],
+#         output="screen"
+#     )
     return LaunchDescription([
         model_arg,
         world_name_arg,
@@ -204,7 +203,7 @@ def generate_launch_description():
         gazebo,
         gz_spawn_entity,
         gz_ros2_bridge,
-        controller_manager,
-        spawner_jsb,
-        spawner_diff
+        # controller_manager,
+        # spawner_jsb,
+        # spawner_diff
     ])
