@@ -10,9 +10,9 @@
 
   <!-- Include Gazebo Parameters -->
   <xacro:include filename="$(find health_bot_description)/urdf/healthbot_gazebo.xacro" />
-
-  <!-- Include ros2_control Plugins
-  <xacro:include filename="$(find health_bot_description)/urdf/health_bot_ros2_control.xacro" /> -->
+<!-- 
+  Include ros2_control Plugins -->
+  <!-- <xacro:include filename="$(find health_bot_description)/urdf/healthbot_ros2_control.xacro" /> -->
 
   <link name="base_footprint"/>
   
