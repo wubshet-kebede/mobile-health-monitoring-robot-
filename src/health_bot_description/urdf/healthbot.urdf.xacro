@@ -97,6 +97,7 @@
         <sphere radius="0.033"/>
       </geometry>
     </collision>
+    
   </link>
 
   <joint name="wheel_left_joint" type="continuous">

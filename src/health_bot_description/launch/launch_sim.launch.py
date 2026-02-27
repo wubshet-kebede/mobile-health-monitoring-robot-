@@ -161,7 +161,7 @@ def generate_launch_description():
                     "-world", "hospital_world",
                     "-x", "3",
                     "-y", "2",
-                    "-z", "0.05"],
+                    "-z", "0.0"],
     )
 
     gz_ros2_bridge = Node(
