@@ -11,41 +11,44 @@ def generate_launch_description():
         "healthbot_controllers.yaml"
     )
 
-    # Controller Manager node
-    controller_manager = Node(
-        package="controller_manager",
-        executable="ros2_control_node",
-        parameters=[config],
-        output="screen"
-    )
+    # # Controller Manager node
+    # controller_manager = Node(
+    #     package="controller_manager",
+    #     executable="ros2_control_node",
+    #     parameters=[config],
+    #     output="screen"
+    # )
 
     # Spawner for Joint State Broadcaster
-    spawner_jsb = Node(
+    joint_state_broadcaster = Node( 
+        package="controller_manager", 
+        executable="spawner", 
+        arguments=[ "joint_state_broadcaster", 
+                   "--controller-manager", 
+                   "/controller_manager"
+                     ] )
+    healthbot_controller= Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["joint_state_broadcaster"],
-        output="screen"
-    )
+        arguments=[
+         "healthbot_controller",
+         "--controller-manager",
+        "/controller_manager"
+]
+)
+    
 
-    # Spawner for Diff Drive Controller
-    spawner_diff = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["healthbot_controller"],
-        output="screen"
-    )
-
-    # Spawner for Simple Velocity Controller
-    spawner_vel = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["simple_velocity_controller"],
-        output="screen"
-    )
+    # # Spawner for Simple Velocity Controller
+    # spawner_vel = Node(
+    #     package="controller_manager",
+    #     executable="spawner",
+    #     arguments=["simple_velocity_controller"],
+    #     output="screen"
+    # )
 
     return LaunchDescription([
-        controller_manager,
-        spawner_jsb,
-        spawner_diff,
-        spawner_vel
+        # controller_manager,
+        joint_state_broadcaster,
+        healthbot_controller,
+
     ])
