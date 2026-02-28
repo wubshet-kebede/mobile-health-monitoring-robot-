@@ -1,25 +1,13 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="healthbot">
 
-  <ros2_control name="RobotSystem" type="system">
+  <ros2_control name="HealthbotSystem" type="system">
 
     <!-- ros2_control Gazebo (Simulation only) -->
-    <xacro:if value="$(arg is_sim)">
       <hardware>
         <plugin>gz_ros2_control/GazeboSimSystem</plugin>
       </hardware>
-    </xacro:if>
-
-    <!-- ros2_control Real Robot (optional, uncomment if you have firmware) -->
-    <!--
-    <xacro:unless value="$(arg is_sim)">
-      <hardware>
-        <plugin>healthbot_firmware/HealthbotInterface</plugin>
-        <param name="port">/dev/arduino</param>
-      </hardware>
-    </xacro:unless>
-    -->
-
+   
     <!-- ros2_control Common Interfaces -->
     <joint name="wheel_right_joint">
       <command_interface name="velocity">
