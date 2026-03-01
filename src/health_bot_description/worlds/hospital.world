@@ -28,9 +28,11 @@
     <!-- <include>
       <uri>model://ground_plane</uri>
       <pose>0 0 -0.1 0 -0 0</pose>
+      
     </include>  -->
     <model name="ground_plane">
             <static>true</static>
+            <pose>0 0 -0.01 0 0 0</pose>
            <link name="link">
                 <collision name="collision">
                     <geometry>
