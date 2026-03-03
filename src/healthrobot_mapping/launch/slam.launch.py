@@ -8,7 +8,7 @@ from launch.substitutions import LaunchConfiguration
 def generate_launch_description():
     use_sim_time = LaunchConfiguration("use_sim_time")
     slam_config = LaunchConfiguration("slam_config")
-
+    lifecycle_nodes = ["slam_toolbox"]
     use_sim_time_arg = DeclareLaunchArgument(
         "use_sim_time",
         default_value="true"
@@ -30,7 +30,19 @@ def generate_launch_description():
         name="slam_toolbox",
         output="screen",
         parameters=[slam_config, {"use_sim_time": use_sim_time}],
+        # remappings=[("/odom", "/healthbot_controller/odom")]
     )
+    nav2_lifecycle_manager = Node(
+    package="nav2_lifecycle_manager",
+    executable="lifecycle_manager",
+    name="lifecycle_manager_slam",
+    output="screen",
+    parameters=[
+        {"node_names": lifecycle_nodes},
+        {"use_sim_time": use_sim_time},
+        {"autostart": True}
+    ],
+)
 
     return LaunchDescription([
         use_sim_time_arg,
