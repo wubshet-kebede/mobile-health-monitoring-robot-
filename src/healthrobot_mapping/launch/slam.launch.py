@@ -8,7 +8,7 @@ from launch.substitutions import LaunchConfiguration
 def generate_launch_description():
     use_sim_time = LaunchConfiguration("use_sim_time")
     slam_config = LaunchConfiguration("slam_config")
-    lifecycle_nodes = ["slam_toolbox"]
+    lifecycle_nodes = ["map_saver_server", "slam_toolbox"]
     use_sim_time_arg = DeclareLaunchArgument(
         "use_sim_time",
         default_value="true"
@@ -23,7 +23,18 @@ def generate_launch_description():
         ),
         description="Full path to slam yaml file to load"
     )
-
+    nav2_map_saver = Node(
+        package="nav2_map_server",
+        executable="map_saver_server",
+        name="map_saver_server",
+        output="screen",
+        parameters=[
+            {"save_map_timeout": 5.0},
+            {"use_sim_time": use_sim_time},
+            {"free_thresh_default", "0.196"},
+            {"occupied_thresh_default", "0.65"},
+        ],
+    )
     slam_toolbox = Node(
         package="slam_toolbox",
         executable="sync_slam_toolbox_node",
@@ -47,6 +58,7 @@ def generate_launch_description():
     return LaunchDescription([
         use_sim_time_arg,
         slam_config_arg,
+        nav2_map_saver,
         slam_toolbox,
         nav2_lifecycle_manager,
     ])
