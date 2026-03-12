@@ -37,7 +37,7 @@ def generate_launch_description():
         executable="rviz2",
         name="rviz2",
         output="screen",
-        arguments=["-d", os.path.join(health_bot_description_dir, "rviz", "display.rviz")],
+        arguments=["-d", os.path.join(health_bot_description_dir, "rviz", "default_view.rviz")],
     )
 
     return LaunchDescription([
