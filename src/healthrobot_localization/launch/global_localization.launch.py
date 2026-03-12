@@ -15,7 +15,8 @@ def generate_launch_description():
 
     map_name_arg = DeclareLaunchArgument(
         "map_name",
-        default_value="small_house"
+        default_value="hospital_map",
+        description="Name of the map to load (should be located in healthrobot_mapping/maps/)"
     )
 
     use_sim_time_arg = DeclareLaunchArgument(
@@ -37,7 +38,7 @@ def generate_launch_description():
         get_package_share_directory("healthrobot_mapping"),
         "maps",
         map_name,
-        "map.yaml"
+        "hospital_static_map.yaml"
     ])
     
     nav2_map_server = Node(
