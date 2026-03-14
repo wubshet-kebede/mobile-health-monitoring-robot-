@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<robot name="health_bot" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="healthrobot" xmlns:xacro="http://ros.org/wiki/xacro">
 
   <!-- Start GZ or Ignition depending on ROS 2 Version -->
   <xacro:arg name="is_ignition" default="true"/>
@@ -9,10 +9,10 @@
   <xacro:arg name="is_sim" default="true"/>
 
   <!-- Include Gazebo Parameters -->
-  <xacro:include filename="$(find health_bot_description)/urdf/healthbot_gazebo.xacro" />
+  <xacro:include filename="$(find healthrobot_description)/urdf/healthrobot_gazebo.xacro" />
 <!-- 
   Include ros2_control Plugins -->
-  <xacro:include filename="$(find health_bot_description)/urdf/healthbot_ros2_control.xacro" />
+  <xacro:include filename="$(find healthrobot_description)/urdf/healthrobot_ros2_control.xacro" />
 
   <link name="base_footprint"/>
   
@@ -27,14 +27,14 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://health_bot_description/meshes/base_link.STL" />
+        <mesh filename="package://healthrobot_description/meshes/base_link.STL" />
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://health_bot_description/meshes/base_link.STL" />
+        <mesh filename="package://healthrobot_description/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -56,7 +56,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="1.57 0 0" />
       <geometry>
-        <mesh filename="package://health_bot_description/meshes/wheel_right_link.STL" />
+        <mesh filename="package://healthrobot_description/meshes/wheel_right_link.STL" />
       </geometry>
       <material name="blue"/>
     </visual>
@@ -87,7 +87,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="-1.57 0 0" />
       <geometry>
-        <mesh filename="package://health_bot_description/meshes/wheel_left_link.STL" />
+        <mesh filename="package://healthrobot_description/meshes/wheel_left_link.STL" />
       </geometry>
       <material name="blue"/>
     </visual>
@@ -118,7 +118,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://health_bot_description/meshes/caster_front_link.STL" />
+        <mesh filename="package://healthrobot_description/meshes/caster_front_link.STL" />
       </geometry>
       <material name="silver"/>
     </visual>
@@ -148,7 +148,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://health_bot_description/meshes/caster_rear_link.STL" />
+        <mesh filename="package://healthrobot_description/meshes/caster_rear_link.STL" />
       </geometry>
       <material name="silver"/>
     </visual>
@@ -178,14 +178,14 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://health_bot_description/meshes/imu_link.STL" />
+        <mesh filename="package://healthrobot_description/meshes/imu_link.STL" />
       </geometry>
       <material name="blue"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://health_bot_description/meshes/imu_link.STL" />
+        <mesh filename="package://healthrobot_description/meshes/imu_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -208,14 +208,14 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://health_bot_description/meshes/laser_link.STL" />
+        <mesh filename="package://healthrobot_description/meshes/laser_link.STL" />
       </geometry>
       <material name="dark_grey"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh filename="package://health_bot_description/meshes/laser_link.STL" />
+        <mesh filename="package://healthrobot_description/meshes/laser_link.STL" />
       </geometry>
     </collision>
   </link>
