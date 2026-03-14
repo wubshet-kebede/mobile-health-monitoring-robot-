@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>healthbot_ros2_control</name>
+  <name>healthrobot_ros2_control</name>
   <version>0.0.0</version>
-  <description>This Package is for controlling the healthbot robot using ROS2 control framework</description>
+  <description>This Package is for controlling the healthrobot robot using ROS2 control framework</description>
   <maintainer email="wubshet2829@gmail.com">wube</maintainer>
   <license>Apache 2.0</license>
 

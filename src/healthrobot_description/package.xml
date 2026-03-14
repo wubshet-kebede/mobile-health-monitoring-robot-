@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <!-- this file defines the package name version, description , maintainer and the license and also dependencies for what other packages are required to run our package-->
 <package format="3">
-  <name>health_bot_description</name><!--the name of the package-->
+  <name>healthrobot_description</name><!--the name of the package-->
   <version>0.0.1</version>
   <description>IoT Enabled Autonomous Mobile Health Robot for Remote Patient Monitoring</description>
   <maintainer email="wubshet2829@gmail.com">wube</maintainer>
