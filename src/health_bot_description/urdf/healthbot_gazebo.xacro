@@ -45,7 +45,7 @@
   <!-- ROS 2 Control + Sensors (Gazebo Harmonic) --> 
   <gazebo> 
   <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin" >
-    <parameters>$(find healthbot_ros2_control)/config/healthbot_controllers.yaml</parameters>
+    <parameters>$(find healthbot_ros2_control)/config/healthrobot_controllers.yaml</parameters>
   </plugin>
    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"/> 
    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors"> 
