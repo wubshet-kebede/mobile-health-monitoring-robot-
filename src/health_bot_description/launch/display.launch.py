@@ -31,7 +31,7 @@ def generate_launch_description():
     #      executable="joint_state_publisher", 
     #      name="joint_state_publisher" 
     # )
-
+    # use_time = LaunchConfiguration("use_sim_time", default="true")
     rviz_node = Node(
         package="rviz2",
         executable="rviz2",
@@ -42,6 +42,7 @@ def generate_launch_description():
 
     return LaunchDescription([
         model_arg,
+        
         # joint_state_publisher_gui_node,
         # robot_state_publisher_node,
         rviz_node

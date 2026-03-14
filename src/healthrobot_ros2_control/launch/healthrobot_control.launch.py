@@ -6,9 +6,9 @@ from ament_index_python.packages import get_package_share_directory
 def generate_launch_description():
     # Path to  modular YAML
     config = os.path.join(
-        get_package_share_directory("healthbot_ros2_control"),
+        get_package_share_directory("healthrobot_ros2_control"),
         "config",
-        "healthbot_controllers.yaml"
+        "healthrobot_controllers.yaml"
     )
 
     # # Controller Manager node
@@ -27,7 +27,7 @@ def generate_launch_description():
                    "--controller-manager", 
                    "/controller_manager"
                      ] )
-    healthbot_controller= Node(
+    healthrobot_controller= Node(
         package="controller_manager",
         executable="spawner",
         arguments=[
@@ -49,6 +49,6 @@ def generate_launch_description():
     return LaunchDescription([
         # controller_manager,
         joint_state_broadcaster,
-        healthbot_controller,
+        healthrobot_controller,
 
     ])
